@@ -12,10 +12,10 @@ Model updates look like “flip a flag,” but the real work is staged evaluatio
 
 ---
 
-## What you get
+## Contents
 
 - `checklists/example.promotion.yaml` — example promotion definition (synthetic).
-- `src/validate.ts` — validates checklist shape (Zod) so you can enforce structure in CI.
+- `src/validate.ts` — validates checklist shape (Zod) for enforcement in CI.
 
 ---
 
