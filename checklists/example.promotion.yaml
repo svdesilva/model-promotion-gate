@@ -1,0 +1,24 @@
+version: 1
+candidate:
+  modelName: demo-model-b
+  changeSummary: "Improved tool-use reliability for CRM workflows"
+stages:
+  - id: offline_eval
+    status: required
+  - id: shadow_traffic_1pct
+    status: required
+  - id: canary_10pct
+    status: optional
+gates:
+  - metric: eval.tool_call_error_rate
+    threshold:
+      op: lte
+      value: 0.01
+  - metric: eval.human_takeover_rate
+    threshold:
+      op: lte
+      value: 0.03
+approvals:
+  requiredRoles:
+    - model-owner
+    - ai-product-lead
